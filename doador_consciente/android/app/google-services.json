@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "630045552648",
+    "firebase_url": "https://doadorconsciente-9ee15.firebaseio.com",
+    "project_id": "doadorconsciente-9ee15",
+    "storage_bucket": "doadorconsciente-9ee15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630045552648:android:c23c4a0f5b34fc68a9a1bd",
+        "android_client_info": {
+          "package_name": "com.elias.doador_consciente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630045552648-hn2fhgkc8vpimtd5q20ngpmofga62vc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elias.doador_consciente",
+            "certificate_hash": "8068ee6ee908e04d9ea9011c0a63300c502a2da7"
+          }
+        },
+        {
+          "client_id": "630045552648-bkpgrfnajl112sbag5d2954mdrsso2pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-C02Ahmt_x6Gi56Z_j4DfB2-d5AHagg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630045552648-bkpgrfnajl112sbag5d2954mdrsso2pu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

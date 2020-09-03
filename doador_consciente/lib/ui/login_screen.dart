@@ -88,11 +88,18 @@ class _LoginPageState extends State<LoginPage> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Icon(
-                            Icons.favorite_border,
-                            size: 90.0,
-                            color: Colors.black,
-                          ),
+                          Column(children: <Widget>[
+                            Icon(
+                              Icons.favorite,
+                              size: 90.0,
+                              color: Color.fromRGBO(255, 0, 0, 1),
+                            ),
+                            Icon(
+                              Icons.favorite_border,
+                              size: 35.0,
+                              color: Color.fromRGBO(255, 0, 0, 1),
+                            ),
+                          ],)
                         ],
                       ),
                       Padding(

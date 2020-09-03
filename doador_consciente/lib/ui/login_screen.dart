@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                           Icon(
                             Icons.favorite_border,
                             size: 90.0,
-                            color: Colors.red,
+                            color: Colors.black,
                           ),
                         ],
                       ),
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                               fontFamily: "UbuntuB",
                               fontSize: 35,
-                              color: Color.fromRGBO(255, 0, 0, 1)),
+                              color: Color.fromRGBO(0, 0, 0, 1)),
                         ),
                       ),
                       Padding(
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: TextStyle(
                               fontFamily: "UbuntuB",
                               fontSize: 20,
-                              color: Color.fromRGBO(253, 148, 148, 1)),
+                              color: Color.fromRGBO(148, 148, 148, 1)),
                         ),
                       ),
                       Padding(
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                           padding: EdgeInsets.only(
                               top: 10.0, left: 20.0, right: 20.0),
                           child: RaisedButton(
-                            splashColor: Colors.redAccent,
+                            splashColor: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5.0)),
                             onPressed: () {

@@ -119,6 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.only(
                             top: 50, left: 8.0, right: 8.0),
                         child: TextFormField(
+                          cursorColor: Colors.red,
                           controller: loginController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -126,8 +127,6 @@ class _LoginPageState extends State<LoginPage> {
                               Icons.person,
                               color: Colors.red,
                             ),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0)),
                             labelText: "Login",
                             hintStyle: TextStyle(
                                 color: Colors.red,
@@ -140,6 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.only(
                             top: 20, left: 8.0, right: 8.0),
                         child: TextFormField(
+                          obscureText: true,
                           controller: senhaController,
                           keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
@@ -147,8 +147,6 @@ class _LoginPageState extends State<LoginPage> {
                               Icons.lock_outline,
                               color: Colors.red,
                             ),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0)),
                             labelText: "Senha",
                             hintStyle: TextStyle(
                                 color: Colors.white,

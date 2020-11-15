@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
             );
           });
     }
-
+ //Color between Color.RGBO(255,0,0,1) and Colors.white
     return Scaffold(
         backgroundColor: Colors.white,
         bottomNavigationBar: FlatButton(

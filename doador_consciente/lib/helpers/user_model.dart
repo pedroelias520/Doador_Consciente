@@ -40,10 +40,7 @@ class UserModel extends Model {
     notifyListeners();
 
     _auth.createUserWithEmailAndPassword(email: userData["email"], password: pass).then((user) async {
-      print(user.user.uid);
-      Map<String,dynamic> add ={"id": user.user.uid.toString()};
-      userData.addAll(add);
-      await _saveUserData(userData, user); //Salva os demais dados do usuário no  banco
+      await _saveUserData(userData, user);
       onsucess();
       isLodding = false;
       notifyListeners();
@@ -68,6 +65,7 @@ class UserModel extends Model {
       DocumentSnapshot docUser = await Firestore.instance.collection("Users").document(user.uid).get();
       firebaseUser = user;
       userData = docUser.data;
+      debugPrint(userData.toString());
       //await _loadCurrentUser();
       onSucess();
       isLodding = false;
@@ -83,8 +81,47 @@ class UserModel extends Model {
       notifyListeners();
     }
   }
+  Future<String> GenerateId() async {
+    String id_number = "";
+    Random gerador = new Random();
+    for (int i=0;i<4;i++){
+      for (int x=0;x<4;x++){
+        var number = gerador.nextInt(9);
+        id_number = id_number.toString() + number.toString();
+      }
+      if(i<3){
+        id_number = id_number + " ";
+      }
+    }
+    List list_of_ids = (await Firestore.instance.collection("Users").where("id", arrayContains: id_number).getDocuments()).documents;
+    if(list_of_ids.isEmpty){
+      return id_number;
+    }
+    else{
+      GenerateId();
+    }
+  }
 
-  void recoverPass() {}
+  Future<String> GenerateCampanhaId() async {
+    String id_number = "";
+    Random gerador = new Random();
+    for (int i=0;i<5;i++){
+      for (int x=0;x<5;x++){
+        var number = gerador.nextInt(9);
+        id_number = id_number.toString() + number.toString();
+      }
+      if(i<4){
+        id_number = id_number + " ";
+      }
+    }
+    List list_of_ids = (await Firestore.instance.collection("Campanhas").where("id", arrayContains: id_number).getDocuments()).documents;
+    if(list_of_ids.isEmpty){
+    return id_number;
+    }
+    else{
+    GenerateId();
+    }
+  }
 
   List<UserModel> getUserList() {
     List items;
@@ -134,8 +171,6 @@ class UserModel extends Model {
     Firestore.instance.collection("Users").document(user.user.uid).setData(userData);
   }
   Future<Null> saveCampanha(@required Map<String, dynamic> userData, @required FirebaseUser user) async {
-    Map<String,dynamic> add = {"id": randomString(16)};
-    userData.addAll(add);
     this.userData = userData;
     Firestore.instance.collection("Campanhas").document(userData['id']).setData(userData);
   }

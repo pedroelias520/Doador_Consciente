@@ -136,6 +136,7 @@ class _ContactPageState extends State<ContactPage> {
                   ),
                   Container(
                     child: TextField(
+                      obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       cursorColor: Colors.white,
                       controller: _passController,
@@ -391,11 +392,14 @@ class _ContactPageState extends State<ContactPage> {
                             color: Colors.white, fontFamily: 'UbuntuB'),
                       ),
                       onPressed: () async {
+
+                        String id_generated = await model.GenerateId();
                         String FileURL = await model.saveImage(_image);
                         DateTime now = DateTime.now();
                         String formattedDate = DateFormat('dd-MM-yyyy').format(now);
 
                         Map<String, dynamic> userData = {
+                          "id": id_generated,
                           "name": _nameController.text,
                           "email": _emailController.text,
                           "phone": _phoneController.text,
@@ -408,7 +412,6 @@ class _ContactPageState extends State<ContactPage> {
                           "data_doacao": dataController.text,
                           "data_criacao": formattedDate.toString(),
                         };
-                        print(userData);
                         model.SignUp(
                             userData: userData,
                             pass: _passController.text,

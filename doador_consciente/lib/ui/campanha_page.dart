@@ -146,8 +146,10 @@ class _CampanhaPageState extends State<CampanhaPage> {
                               String ImageURL = await model.saveImage(_image);
                               String BannerURL = await model.saveImage(_banner);
                               String nome_criador = await model.userData['name'];
+                              String id_campanha = await model.GenerateCampanhaId();
                               String data_criacao = DateTime.now().toString();
                               Map<String,dynamic> campanha = {
+                                "id" : id_campanha,
                                 "nome_campanha" : nameController.text,
                                 "receptor_campanha" : receptorController.text,
                                 "bolsas_campanha" : bolsasController.text,

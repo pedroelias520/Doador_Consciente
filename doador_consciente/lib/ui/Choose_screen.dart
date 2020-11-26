@@ -55,7 +55,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
                       child: Column(
                         children: <Widget>[
                           CircleAvatar(
-                            backgroundImage: NetworkImage(model.userData['img'].toString()),
+                            backgroundImage: NetworkImage(model.userData['img'].toString()) == null ? Icon(Icons.person) : NetworkImage("https://www.google.com/url?sa=i&url=http%3A%2F%2Fvisitebalneariocamboriu.com.br%2Fperson-icon%2F&psig=AOvVaw0VLzN3gyNq0uR6bjZVvF-b&ust=1606395691582000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCBkLbgne0CFQAAAAAdAAAAABAN"),
                             radius: 90,
                           ),
                           Padding(
